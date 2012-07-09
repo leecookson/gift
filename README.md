@@ -1,4 +1,4 @@
-# Gift
+# Gift-Plus
 
 A simple Node.js wrapper for the Git CLI. The API is based on
 [Grit](https://github.com/mojombo/grit)
@@ -123,8 +123,9 @@ Commit some changes.
 ### `Repo#remove(files, callback)`
 `git rm <files>`
 
-### `Repo#checkout(treeish, callback)`
+### `Repo#checkout(treeish, [files, ]callback)`
 `git checkout <treeish>`
+`git checkout <treeish> -- <pathspec>...`
 
 ## Commit
 ### `Commit#id`
