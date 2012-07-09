@@ -125,6 +125,7 @@ Commit some changes.
 
 ### `Repo#checkout(treeish, [files, ]callback)`
 `git checkout <treeish>`
+
 `git checkout <treeish> -- <pathspec>...`
 
 ## Commit
