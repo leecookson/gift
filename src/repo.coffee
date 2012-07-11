@@ -165,7 +165,7 @@ module.exports = class Repo
   push_tags: (remote, callback) ->
     remote ?= "master"
     @git "push", {tags: true}, remote, callback
-  
+
   # Public: Get a list of branches.
   #
   # callback - Receives `(err, heads)`.
@@ -209,10 +209,17 @@ module.exports = class Repo
 
 
   # Public: Checkout the treeish.
-  checkout: (treeish, files, callback) ->
-    [files, callback] = [callback, files] if !callback
+  #
+  # treeish  - String of treeish to check out
+  # files    - Array (options). Files to check out from specified treeish
+  # options  - Object (optional). Options passed to checkout supported by `git checkout`
+  # callback - Recieves `(err)`
+  checkout: (treeish, files, options, callback) ->
+    [options, callback] = [callback, options] if !callback
+    [files,   callback] = [callback, files] if !callback
     files ?= []
-    @git "checkout", {}, _.flatten([treeish,'--',files]), callback
+    options ?= {}
+    @git "checkout", options, _.flatten([treeish,'--',files]), callback
 
 
   # Public: Commit some code.

@@ -1,5 +1,5 @@
 { "name":        "gift-plus"
-, "version":     "0.0.7"
+, "version":     "0.0.8"
 , "description": "a Git wrapper library"
 , "keywords":   ["git"]
 , "homepage":    "https://github.com/leecookson/gift"
