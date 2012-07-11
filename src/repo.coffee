@@ -210,15 +210,17 @@ module.exports = class Repo
 
   # Public: Checkout the treeish.
   #
-  # treeish  - String of treeish to check out
-  # files    - Array (options). Files to check out from specified treeish
+  # treeish  - String (optional). treeish to check out
+  # files    - Array (optional). Files to check out from specified treeish
   # options  - Object (optional). Options passed to checkout supported by `git checkout`
   # callback - Recieves `(err)`
   checkout: (treeish, files, options, callback) ->
     [options, callback] = [callback, options] if !callback
     [files,   callback] = [callback, files] if !callback
-    files ?= []
+    [treeish,   callback] = [treeish, files] if !callback
     options ?= {}
+    files ?= []
+    treeish ?= ''
     @git "checkout", options, _.flatten([treeish,'--',files]), callback
 
 
