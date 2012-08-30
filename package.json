@@ -1,5 +1,5 @@
 { "name":        "gift-plus"
-, "version":     "0.0.9"
+, "version":     "0.0.10"
 , "description": "a Git wrapper library"
 , "keywords":   ["git"]
 , "homepage":    "https://github.com/leecookson/gift"
@@ -14,10 +14,6 @@
 , "scripts":
   { "test":       "mocha --compilers coffee:coffee-script -R spec"
   , "prepublish": "coffee -o lib -c src"
-  }
-
-, "publishConfig":
-  { "registry" : "http://registry.npmjs.org/"
   }
 
 , "repository":
